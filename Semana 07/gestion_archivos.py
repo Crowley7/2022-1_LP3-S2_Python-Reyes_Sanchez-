@@ -7,8 +7,8 @@ Created on Mon May 30 11:59:43 2022
 
 import os
 def crear_archivo(nombre,contenido):
-        archivo = open(nombre,"wt")
-        archivo.writable(contenido)
+        archivo = open(nombre,"at")
+        archivo.write(contenido)
         archivo.close()
         
 def eliminar_archivo(nombre):

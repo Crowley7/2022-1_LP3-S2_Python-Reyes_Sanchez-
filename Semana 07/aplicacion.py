@@ -8,46 +8,46 @@ Created on Mon May 30 12:06:50 2022
 import gestion_archivos
 
 def menu():
-    print("******MENU PRINCIPAL*****")
+    print("*MENU PRINCIPAL*")
     print("1. Crear Archivo")
-    print("2. Eliminar Archivo")
-    print("3. Agregar Contenido")
+    print("2. Eliminar archivo")
+    print("3. Agregar contenido")
     print("4. Mostrar contenido del archivo")
-    print("5. Salir")
+    print("5.Salir")
     
 def crear():
-    print("--Crear Archivo--")
-    archivo = input("Archivo: ")
-    contenido = input("Contenido: ")
-    gestion_archivos.crear_archivo(archivo,contenido)
-    
+     print("--Crear Archivo--")
+     archivo = input("Archivo: ")
+     contenido = input("Contenido: ")
+     gestion_archivos.crear_archivo(archivo, contenido)
+     
 def eliminar():
-    print("--Eliminar Archivo")
-    archivo = input("Archivo: ")
-    gestion_archivos.eliminar_archivo(archivo)
-
+     print("--Eliminar archivo")
+     archivo = input("Archivo: ")
+     gestion_archivos.eliminar_archivo(archivo)
+     
 def agregar():
-    print("--Agregar Datos a un Archivo--")
-    archivo = input("Archivo: ")
-    archivo = input("Archivo")
-    contenido = input("Contenido: ")
-    gestion_archivos.agregar_contenido_archivo(archivo,contenido)
-
+     print("--Agregar Datos a un Archivo--")
+     archivo = input("Archivo: ")
+  
+     contenido = input("Contenido: ")
+     gestion_archivos.agregar_contenido_archivo(archivo, contenido)
+     
 def listar():
-    print("--Mostrar contenido de un archivo--")
-    archivo = input("Archivo")
-    print(gestion_archivos.leer_archivo(archivo))
-    
+     print("--Mostrar contenido de un archivo--")
+     archivo = input("Archivo: ") 
+     print(gestion_archivos.leer_archivo(archivo))
+     
 def salir():
-    print("Gracias por su visita....")
-
+     print("Gracias por su visita....") 
+     
 def error():
-    print("Opción incorrecta")
-    
+     print("Opcion incorrecta")
+
 opcion = 1
-while opcion!= 5:
+while  opcion!=5:
     menu()
-    opcion = int(input("opcion: "))
+    opcion= int(input("opcion: "))
     if opcion==1:
         crear()
     elif opcion==2:
@@ -58,6 +58,6 @@ while opcion!= 5:
         listar()
     elif opcion==5:
         salir()
-    else:
+    else: 
         error()
     
