@@ -24,26 +24,31 @@ layout = """
 """
 
 def index(request):
+    estudiantes = ['Carlos Ruiz',
+                    'Jordy Quispe',
+                    'Oscar Reyes',
+                    'Antony Vasquez']
+    return render(request,'index.html',{
+        'titulo':'Inicio',
+        'mensaje': 'Proyecto web con DJango en LP3',
+        'estudiantes': estudiantes})
     
-    return render(request,'index.html')
 
 def saludo(request):
     
-    return render(request,'saludo.html')
+    return render(request,'saludo.html',{
+        'titulo':'Bienvenidos',
+        'nombre_autor':'Elias Reyes'})
 
 def rango(request):
-    a = 10
-    b= 20
-    resultado = f"""
-             <h2> Números de [{a},{b}] </h2>
-             Resultado: <br>
-             <ul>
-    """
-    while a<=b:
-        resultado += f"<li> {a} </li>"
-        a+=1
-    resultado +="</ul>"
-    return HttpResponse(layout + resultado)
+    a=10
+    b=20
+    rango_numero = range(a,b+1)
+    return render(request,'rango.html',{
+        'titulo':'Rango',
+        'a': a,
+        'b': b,
+        'rango_numeros':rango_numero})
 
 def rango2(request, a=0, b=100):
     if a>b:
